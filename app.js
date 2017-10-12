@@ -1,6 +1,6 @@
-
 var restify = require('restify');
 var builder = require('botbuilder');
+const roi = require('roi');
 
 // Setup Restify Server
 var server = restify.createServer({});
@@ -30,11 +30,24 @@ var bot = new builder.UniversalBot(connector, function (session) {
     var max = 4,
         min = 0,
         choice = Math.floor(Math.random() * (max - min + 1)) + min;
-    if(session.message.text.match(/Совет:/g)) {
+    if (session.message.text.match(/Совет:/g)) {
         session.send(messages[choice]);
-    } else if(session.message.text.match(/не буянь, бот/g)) {
+    } else if (session.message.text.match(/не буянь, бот/g)) {
         console.log(session, session.from);
         session.send("Хорошо, хозяин");
     }
 
+});
+
+bot.dialog('/', function (session) {
+    const options = {
+        'endpoint': 'https://lexa-bot.herokuapp.com/api/messages'
+    };
+    roi.get(options)
+        .then(function (x) {
+            session.send("%s", JSON.parse(x.body).list[0].definition);
+        })
+        .catch(function (e) {
+            session.send("Didn't find a definition for: %s ", session.message.text);
+        });
 });
