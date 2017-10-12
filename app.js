@@ -33,7 +33,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
     if(session.message.text.match(/Совет:/g)) {
         session.send(messages[choice]);
     } else if(session.message.text.match(/не буянь, бот/g)) {
-        console.log(session, session.from, session.from.id);
+        console.log(session, session.from);
         session.send("Хорошо, хозяин");
     }
 
