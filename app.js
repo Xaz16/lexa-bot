@@ -38,16 +38,3 @@ var bot = new builder.UniversalBot(connector, function (session) {
     }
 
 });
-
-bot.dialog('/', function (session) {
-    const options = {
-        'endpoint': 'https://lexa-bot.herokuapp.com/api/messages'
-    };
-    roi.get(options)
-        .then(function (x) {
-            session.send("%s", JSON.parse(x.body).list[0].definition);
-        })
-        .catch(function (e) {
-            session.send("Didn't find a definition for: %s ", session.message.text);
-        });
-});
