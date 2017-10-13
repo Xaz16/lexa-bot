@@ -38,7 +38,7 @@ function sendProactiveMessage(address) {
 
     advices.splice(positionAdvice, 1);
     quotes.splice(positionQuotes, 1);
-    let mainMessage = `<a href="${advices[positionAdvice].href}">Совет: №${advices[positionAdvice].id}</a> <br/> <br/>${advices[positionAdvice].text} <br/><br/>Цитата: №${positionQuotes} <br><br> ${quotes[positionQuotes]} Осталось цитат: ${quotes.length}<br/>Осталось советов: ${advices.length}`
+    let mainMessage = `<a href="${advices[positionAdvice].href}">Совет: №${advices[positionAdvice].id}</a> <br/> <br/>${advices[positionAdvice].text}`;
     sendMessage(addressSaved, mainMessage);
 
     setTimeout(function () {
@@ -68,7 +68,7 @@ function getRandomInRange(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function getAddresses() {
+function getAddresses(session) {
     let addresses = JSON.parse(fs.readFileSync('./addresses.json', 'utf-8'));
     let isRepeatedAddress = false;
     addresses.forEach(function (elem) {
