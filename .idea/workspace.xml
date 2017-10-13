@@ -13,15 +13,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="13539" />
+    <option name="totalTimeSeconds" value="13810" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="113">
+              <caret line="42" column="131" lean-forward="false" selection-start-line="42" selection-start-column="131" selection-end-line="42" selection-end-column="131" />
               <folding />
             </state>
           </provider>
@@ -248,7 +248,7 @@
       <workItem from="1507824035805" duration="1837000" />
       <workItem from="1507888573645" duration="3346000" />
       <workItem from="1507908693506" duration="5837000" />
-      <workItem from="1507931715491" duration="2453000" />
+      <workItem from="1507931715491" duration="2726000" />
     </task>
     <task id="LOCAL-00001" summary="..">
       <created>1507824119119</created>
@@ -373,7 +373,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20030000" />
+    <option name="totallyTimeSpent" value="20303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="0" />
@@ -662,8 +662,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="70" column="29" lean-forward="false" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+        <state relative-caret-position="113">
+          <caret line="42" column="131" lean-forward="false" selection-start-line="42" selection-start-column="131" selection-end-line="42" selection-end-column="131" />
           <folding />
         </state>
       </provider>
