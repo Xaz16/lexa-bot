@@ -13,15 +13,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="12096" />
+    <option name="totalTimeSeconds" value="12864" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+            <state relative-caret-position="845">
+              <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -42,7 +42,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
               <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-              <folding />
+              <folding>
+                <marker date="1507920833000" expanded="true" signature="124:714" ph="{...}" />
+                <marker date="1507920833000" expanded="true" signature="196:451" ph="{&quot;host&quot;: '127.0.0.1'...}" />
+                <marker date="1507920833000" expanded="true" signature="311:445" ph="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
+                <marker date="1507920833000" expanded="true" signature="514:658" ph="{...}" />
+                <marker date="1507920833000" expanded="true" signature="589:650" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,9 +98,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>post_data</find>
+      <find>var</find>
     </findStrings>
     <replaceStrings>
       <replace>postData</replace>
+      <replace>let</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -112,15 +120,20 @@
       </list>
     </option>
   </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <exe-path />
+    <config-path />
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
     <package-json value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="JsFlowSettings">
-    <service-enabled>false</service-enabled>
+    <service-enabled>true</service-enabled>
     <exe-path />
     <annotation-enable>false</annotation-enable>
-    <other-services-enabled>false</other-services-enabled>
+    <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
   <component name="JsGulpfileManager">
@@ -135,6 +148,28 @@
     <option name="y" value="22" />
     <option name="width" value="1280" />
     <option name="height" value="774" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Node.jsJavaScript</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>NodeJsCodingAssistanceForCoreModules</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -173,11 +208,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="JavaScriptPreferStrict" value="true" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="6.10.3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -210,7 +248,7 @@
       <workItem from="1507824035805" duration="1837000" />
       <workItem from="1507888573645" duration="3346000" />
       <workItem from="1507908693506" duration="5837000" />
-      <workItem from="1507931715491" duration="958000" />
+      <workItem from="1507931715491" duration="1724000" />
     </task>
     <task id="LOCAL-00001" summary="..">
       <created>1507824119119</created>
@@ -310,15 +348,21 @@
       <option name="project" value="LOCAL" />
       <updated>1507932341245</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="..">
+      <created>1507932677975</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1507932677975</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18535000" />
+    <option name="totallyTimeSpent" value="19301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26979" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -370,7 +414,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1507920833000" expanded="true" signature="124:714" ph="{...}" />
+            <marker date="1507920833000" expanded="true" signature="196:451" ph="{&quot;host&quot;: '127.0.0.1'...}" />
+            <marker date="1507920833000" expanded="true" signature="311:445" ph="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
+            <marker date="1507920833000" expanded="true" signature="514:658" ph="{...}" />
+            <marker date="1507920833000" expanded="true" signature="589:650" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -418,7 +468,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="19" lean-forward="true" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1507920833000" expanded="true" signature="124:714" ph="{...}" />
+            <marker date="1507920833000" expanded="true" signature="196:451" ph="{&quot;host&quot;: '127.0.0.1'...}" />
+            <marker date="1507920833000" expanded="true" signature="311:445" ph="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
+            <marker date="1507920833000" expanded="true" signature="514:658" ph="{...}" />
+            <marker date="1507920833000" expanded="true" signature="589:650" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -579,14 +635,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="19" lean-forward="false" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
+          <folding>
+            <marker date="1507920833000" expanded="true" signature="124:714" ph="{...}" />
+            <marker date="1507920833000" expanded="true" signature="196:451" ph="{&quot;host&quot;: '127.0.0.1'...}" />
+            <marker date="1507920833000" expanded="true" signature="311:445" ph="{&quot;Content-Type&quot;: 'application/x-www-form-urlencoded'...}" />
+            <marker date="1507920833000" expanded="true" signature="514:658" ph="{...}" />
+            <marker date="1507920833000" expanded="true" signature="589:650" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        <state relative-caret-position="845">
+          <caret line="68" column="41" lean-forward="true" selection-start-line="68" selection-start-column="41" selection-end-line="68" selection-end-column="41" />
           <folding />
         </state>
       </provider>

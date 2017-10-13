@@ -1,25 +1,22 @@
-var restify = require('restify');
-var builder = require('botbuilder');
-var fs = require('fs');
-var advices = parseFile('./data.json');
-var quotes = parseFile('./quotes_uniq.json');
+const restify = require('restify');
+const builder = require('botbuilder');
+const fs = require('fs');
+let advices = parseFile('./data.json');
+let quotes = parseFile('./quotes_uniq.json');
 
-// Setup Restify Server
-var server = restify.createServer({});
+let server = restify.createServer({});
 server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log('%s listening to %s', server.name, server.url);
 });
 
-// Create chat connector for communicating with the Bot Framework Service
-var connector = new builder.ChatConnector({
+let connector = new builder.ChatConnector({
     appId: 'd49dab97-26d5-496d-8f1c-44deed41f46b',
     appPassword: 'ft1KopBYA6ZhP82gSfDQeAb'
 });
 
-// Listen for messages from users
 server.post('/api/messages', connector.listen());
-var addressSaved = {};
-var messages = [
+let addressSaved = {};
+let messages = [
     "Я безусловно согласен с подобным утверждением",
     "Возможно это так, но я еще не придумал что возразить по этому поводу",
     "плюс +",
@@ -27,8 +24,7 @@ var messages = [
     "Категорически не согласен с таким положением дел"
 ];
 
-// Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
-var bot = new builder.UniversalBot(connector, function (session) {
+let bot = new builder.UniversalBot(connector, function (session) {
     addressSaved = session.message.address;
 
     // getAddresses();
@@ -37,25 +33,21 @@ var bot = new builder.UniversalBot(connector, function (session) {
 
 function sendProactiveMessage(address) {
     address = address || addressSaved;
-    var msg = new builder.Message().address(addressSaved);
-    var positionAdvice = getRandomInRange(advices.length, 0);
-    var positionQuotes = getRandomInRange(quotes.length, 0);
+    let msg = new builder.Message().address(addressSaved);
+    let positionAdvice = getRandomInRange(advices.length, 0);
+    let positionQuotes = getRandomInRange(quotes.length, 0);
 
     advices.splice(positionAdvice, 1);
     quotes.splice(positionQuotes, 1);
-    msg.text('<a href="' + advices[positionAdvice].href +'">' + 'Совет: №' + advices[positionAdvice].id + '</a> <br/> <br/>' + advices[positionAdvice].text +  '<br/><br/>Цитата: №' + positionQuotes + '<br><br>' + quotes[positionQuotes] + 'Осталось цитат: ' + quotes.length + '<br/>Осталось советов:' + advices.length);
-    msg.textLocale('ru-RU');
-    bot.send(msg);
+    let mainMessage = `<a href="${advices[positionAdvice].href}">Совет: №${advices[positionAdvice].id}</a> <br/> <br/>${advices[positionAdvice].text} <br/><br/>Цитата: №${positionQuotes} <br><br> ${quotes[positionQuotes]} Осталось цитат: ${quotes.length}<br/>Осталось советов: ${advices.length}`
+    sendMessage(addressSaved, mainMessage);
 
     setTimeout(function () {
-        msg.text(messages[getRandomInRange(4, 0)]);
-        msg.textLocale('ru-RU');
-        bot.send(msg);
-    }, 2000);
+        sendMessage(addressSaved, messages[getRandomInRange(4, 0)]);
+    }, 1000);
 
 
-
-    if(advices.length !== 0 || quotes.length !== 0) {
+    if (advices.length !== 0 || quotes.length !== 0) {
         setTimeout(sendProactiveMessage, 3.6e+6)
     }
 
@@ -63,7 +55,7 @@ function sendProactiveMessage(address) {
 
 
 function sendMessage(address, text) {
-    var msg = new builder.Message().address(address);
+    let msg = new builder.Message().address(address);
     msg.text(text);
     msg.textLocale('ru-RU');
     bot.send(msg);
@@ -78,14 +70,14 @@ function getRandomInRange(max, min) {
 }
 
 function getAddresses() {
-    var addresses = JSON.parse(fs.readFileSync('./addresses.json', 'utf-8'));
-    var isRepeatedAddress = false;
+    let addresses = JSON.parse(fs.readFileSync('./addresses.json', 'utf-8'));
+    let isRepeatedAddress = false;
     addresses.forEach(function (elem) {
-        if(elem.conversation.id === addressSaved.conversation.id) {
+        if (elem.conversation.id === addressSaved.conversation.id) {
             isRepeatedAddress = true;
         }
     });
-    if(!isRepeatedAddress) {
+    if (!isRepeatedAddress) {
         addresses.push(session.message.address);
         fs.writeFile('addresses.json', JSON.stringify(addresses));
         sendMessage(session.message.address, 'Спасибо за информацию, ' + session.message.address.user.name)
