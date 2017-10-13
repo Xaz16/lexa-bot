@@ -2,6 +2,7 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var fs = require('fs');
 var advices = parseFile('./data.json');
+var quotes = parseFile('./quotes_uniq.json');
 
 // Setup Restify Server
 var server = restify.createServer({});
@@ -30,42 +31,37 @@ var messages = [
 var bot = new builder.UniversalBot(connector, function (session) {
     addressSaved = session.message.address;
 
-    var addresses = JSON.parse(fs.readFileSync('./addresses.json', 'utf-8'));
-    var isRepeatedAddress = false;
-    addresses.forEach(function (elem) {
-        if(elem.conversation.id === addressSaved.conversation.id) {
-            isRepeatedAddress = true;
-        }
-    });
-    if(!isRepeatedAddress) {
-        addresses.push(session.message.address);
-        fs.writeFile('addresses.json', JSON.stringify(addresses));
-
-        sendMessage(session.message.address, 'Спасибо за информацию, ' + session.message.address.user.name)
-    }
-
-
+    // getAddresses();
     sendProactiveMessage();
 });
 
 function sendProactiveMessage(address) {
     address = address || addressSaved;
     var msg = new builder.Message().address(addressSaved);
-    var position = getRandomInRange(advices.length, 0);
-    msg.text('<a href="' + advices[position].href +'">' + 'Совет: №' + advices[position].id + '</a> <br/> <br/>' + advices[position].text + "\n <br/> <br/> Осталось советов: " + advices.length);
+    var positionAdvice = getRandomInRange(advices.length, 0);
+    var positionQuotes = getRandomInRange(quotes.length, 0);
+
+    advices.splice(positionAdvice, 1);
+    msg.text('<a href="' + advices[positionAdvice].href +'">' + 'Совет: №' + advices[positionAdvice].id + '</a> <br/> <br/>' + advices[positionAdvice].text + "\n <br/> <br/>Осталось советов: " + advices.length);
     msg.textLocale('ru-RU');
     bot.send(msg);
+
+    setTimeout(function () {
+        quotes.splice(positionQuotes, 1);
+        msg.text('Цитата: №' + positionQuotes + '<br><br>' + quotes[positionQuotes] + 'Осталось цитат: ' + quotes.length)
+        msg.textLocale('ru-RU');
+        bot.send(msg);
+    }, 1000);
 
     setTimeout(function () {
         msg.text(messages[getRandomInRange(4, 0)]);
         msg.textLocale('ru-RU');
         bot.send(msg);
-    }, 1000);
+    }, 2000);
 
 
-    advices.splice(position, 1);
 
-    if(advices.length !== 0) {
+    if(advices.length !== 0 || quotes.length !== 0) {
         setTimeout(sendProactiveMessage, 3.6e+6)
     }
 
@@ -85,4 +81,19 @@ function parseFile(path) {
 
 function getRandomInRange(max, min) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getAddresses() {
+    var addresses = JSON.parse(fs.readFileSync('./addresses.json', 'utf-8'));
+    var isRepeatedAddress = false;
+    addresses.forEach(function (elem) {
+        if(elem.conversation.id === addressSaved.conversation.id) {
+            isRepeatedAddress = true;
+        }
+    });
+    if(!isRepeatedAddress) {
+        addresses.push(session.message.address);
+        fs.writeFile('addresses.json', JSON.stringify(addresses));
+        sendMessage(session.message.address, 'Спасибо за информацию, ' + session.message.address.user.name)
+    }
 }
