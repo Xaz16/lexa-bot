@@ -17,7 +17,7 @@ var connector = new builder.ChatConnector({
 
 // Listen for messages from users
 server.post('/api/messages', connector.listen());
-
+var addressSaved = {};
 var messages = [
     "Я безусловно согласен с подобным утверждением",
     "Возможно это так, но я еще не придумал что возразить по этому поводу",
@@ -35,20 +35,21 @@ var bot = new builder.UniversalBot(connector, function (session) {
         session.send("Хорошо, хозяин");
     }
 
-    sendProactiveMessage(session.message.address);
+    addressSaved = session.message.address;
+    sendProactiveMessage();
 });
 
-function sendProactiveMessage(address) {
-    var msg = new builder.Message().address(address);
+function sendProactiveMessage() {
+    var msg = new builder.Message().address(addressSaved);
     var position = getRandomInRange(advices.length, 0);
-    msg.text(advices[position]);
+    msg.text(advices[position].text);
     msg.textLocale('ru-RU');
     bot.send(msg);
 
     advices.splice(position, 1);
 
     if(advices.length !== 0) {
-        setTimeout(sendProactiveMessage(address), 3.6e+6)
+        setTimeout(sendProactiveMessage, 3.6e+6)
     }
 
 }
