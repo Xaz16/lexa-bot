@@ -2,6 +2,8 @@ var restify = require('restify');
 var builder = require('botbuilder');
 const roi = require('roi');
 
+var advices = parseFile();
+
 // Setup Restify Server
 var server = restify.createServer({});
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -27,14 +29,35 @@ var messages = [
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
-    var max = 4,
-        min = 0,
-        choice = Math.floor(Math.random() * (max - min + 1)) + min;
     if (session.message.text.match(/Совет:/g)) {
-        session.send(messages[choice]);
+        session.send(messages[getRandomInRange(4, 0)]);
     } else if (session.message.text.match(/не буянь, бот/g)) {
         console.log(session.message);
         session.send("Хорошо, хозяин");
     }
 
+    sendProactiveMessage(session.message.address);
 });
+
+function sendProactiveMessage(address) {
+    var msg = new builder.Message().address(address);
+    var position = getRandomInRange(advices.length, 0);
+    msg.text(advices[position]);
+    msg.textLocale('ru-RU');
+    bot.send(msg);
+
+    advices.splice(position, 1);
+
+    if(advices.length !== 0) {
+        setTimeout(sendProactiveMessage(address), 3.6e+6)
+    }
+
+}
+
+function parseFile() {
+    return JSON.parse(fs.readFileSync('./items.json', 'utf-8'));
+}
+
+function getRandomInRange(max, min) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+}
