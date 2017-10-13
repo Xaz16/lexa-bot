@@ -46,9 +46,12 @@ function sendProactiveMessage() {
     msg.textLocale('ru-RU');
     bot.send(msg);
 
-    msg.text(messages[getRandomInRange(4, 0)]);
-    msg.textLocale('ru-RU');
-    bot.send(msg);
+    setTimeout(function () {
+        msg.text(messages[getRandomInRange(4, 0)]);
+        msg.textLocale('ru-RU');
+        bot.send(msg);
+    }, 1000);
+
 
     advices.splice(position, 1);
 
