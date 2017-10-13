@@ -42,7 +42,7 @@ var bot = new builder.UniversalBot(connector, function (session) {
 function sendProactiveMessage() {
     var msg = new builder.Message().address(addressSaved);
     var position = getRandomInRange(advices.length, 0);
-    msg.text(advices[position].text);
+    msg.text(advices[position].text + "\n Осталось советов:" + advices.length);
     msg.textLocale('ru-RU');
     bot.send(msg);
 
