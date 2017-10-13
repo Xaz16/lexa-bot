@@ -42,16 +42,10 @@ function sendProactiveMessage(address) {
     var positionQuotes = getRandomInRange(quotes.length, 0);
 
     advices.splice(positionAdvice, 1);
-    msg.text('<a href="' + advices[positionAdvice].href +'">' + 'Совет: №' + advices[positionAdvice].id + '</a> <br/> <br/>' + advices[positionAdvice].text + "\n <br/> <br/>Осталось советов: " + advices.length);
+    quotes.splice(positionQuotes, 1);
+    msg.text('<a href="' + advices[positionAdvice].href +'">' + 'Совет: №' + advices[positionAdvice].id + '</a> <br/> <br/>' + advices[positionAdvice].text +  '<br/><br/>Цитата: №' + positionQuotes + '<br><br>' + quotes[positionQuotes] + 'Осталось цитат: ' + quotes.length + '<br/>Осталось советов:' + advices.length);
     msg.textLocale('ru-RU');
     bot.send(msg);
-
-    setTimeout(function () {
-        quotes.splice(positionQuotes, 1);
-        msg.text('Цитата: №' + positionQuotes + '<br><br>' + quotes[positionQuotes] + 'Осталось цитат: ' + quotes.length)
-        msg.textLocale('ru-RU');
-        bot.send(msg);
-    }, 1000);
 
     setTimeout(function () {
         msg.text(messages[getRandomInRange(4, 0)]);
