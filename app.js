@@ -53,7 +53,7 @@ function sendProactiveMessage() {
     advices.splice(position, 1);
 
     if(advices.length !== 0) {
-        setTimeout(sendProactiveMessage, 3.6e+6)
+        setTimeout(sendProactiveMessage, 10000)
     }
 
 }
