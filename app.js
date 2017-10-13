@@ -1,7 +1,6 @@
 var restify = require('restify');
 var builder = require('botbuilder');
-const roi = require('roi');
-
+var fs = require('fs');
 var advices = parseFile();
 
 // Setup Restify Server
@@ -55,7 +54,7 @@ function sendProactiveMessage(address) {
 }
 
 function parseFile() {
-    return JSON.parse(fs.readFileSync('./items.json', 'utf-8'));
+    return JSON.parse(fs.readFileSync('./data.json', 'utf-8'));
 }
 
 function getRandomInRange(max, min) {
