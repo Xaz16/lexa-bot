@@ -74,6 +74,7 @@ function sendProactiveMessage(address, optionalChoice) {
 
 
 function sendMessage(address, text) {
+    address = address || '19:54b970231658409680e96affbf2d2e73@thread.skype';
     let msg = new builder.Message().address(address);
     msg.text(text);
     msg.textLocale('ru-RU');
@@ -102,3 +103,5 @@ function getAddresses(session) {
         sendMessage(session.message.address, 'Спасибо за информацию, ' + session.message.address.user.name)
     }
 }
+
+sendMessage(null, 'Я проснулся');
