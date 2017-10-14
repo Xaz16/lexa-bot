@@ -26,31 +26,42 @@ let messages = [
 
 let bot = new builder.UniversalBot(connector, function (session) {
     addressSaved = session.message.address;
+    console.log(addressSaved);
 
-    // getAddresses();
-    sendProactiveMessage();
+    if(addressSaved.user.name === 'Aleksey Chipiga' && session.message.text.match(/совет/g)) {
+        sendProactiveMessage(null, 'advice');
+    } else if(addressSaved.user.name === 'Aleksey Chipiga' && session.message.text.match(/цитату|шутейку/g)) {
+        sendProactiveMessage(null, 'quote');
+    } else if(session.message.text.match(/проясни ситуацию/g)) {
+        sendMessage(addressSaved, '@Skyper тебе здесь не рады');
+    }
+
 });
 
-function sendProactiveMessage(address) {
+function sendProactiveMessage(address, optionalChoice) {
     address = address || addressSaved;
     let positionAdvice = getRandomInRange(advices.length, 0);
     let positionQuotes = getRandomInRange(quotes.length, 0);
 
     advices.splice(positionAdvice, 1);
     quotes.splice(positionQuotes, 1);
-    let advice = `<a href="${advices[positionAdvice].href}">Совет: №${advices[positionAdvice].id}</a> <br/> <br/>${advices[positionAdvice].text} <br/><br/>Осталось советов: ${advices.length}`,
-        quote = `Цитата: №${positionQuotes} <br/><br/> ${quotes[positionQuotes]} <br/><br/> Осталось цитат: ${quotes.length}`;
-    sendMessage(addressSaved, advice);
-    sendMessage(addressSaved, quote);
+    let adviceMessage = `<a href="${advices[positionAdvice].href}">Совет: №${advices[positionAdvice].id}</a> <br/> <br/>${advices[positionAdvice].text} <br/><br/>Осталось советов: ${advices.length}`,
+        quoteMessage = `Цитата: №${positionQuotes} <br/><br/> ${quotes[positionQuotes]} <br/><br/> Осталось цитат: ${quotes.length}`;
+
+
+    if(optionalChoice && optionalChoice === 'advice') {
+        sendMessage(address, adviceMessage);
+    } else if (optionalChoice && optionalChoice === 'quote') {
+        sendMessage(address, quoteMessage);
+    } else {
+        sendMessage(address, adviceMessage);
+        sendMessage(address, quoteMessage);
+    }
+
 
     setTimeout(function () {
         sendMessage(addressSaved, messages[getRandomInRange(4, 0)]);
     }, 1000);
-
-
-    if (advices.length !== 0 || quotes.length !== 0) {
-        setTimeout(sendProactiveMessage, 3.6e+6)
-    }
 
 }
 
