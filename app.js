@@ -1,8 +1,10 @@
 const restify = require('restify');
 const builder = require('botbuilder');
 const fs = require('fs');
+const cron = require('node-cron');
 let advices = parseFile('./data.json');
 let quotes = parseFile('./quotes_uniq.json');
+let crontask;
 
 let server = restify.createServer({});
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -36,6 +38,9 @@ let bot = new builder.UniversalBot(connector, function (session) {
         sendMessage(addressSaved, '@Skyper тебе здесь не рады');
     }
 
+    if(!crontask) {
+        crontask = cron.schedule('0 8-17 * * 1-5', sendProactiveMessage(addressSaved))
+    }
 });
 
 function sendProactiveMessage(address, optionalChoice) {
