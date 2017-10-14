@@ -39,7 +39,8 @@ let bot = new builder.UniversalBot(connector, function (session) {
     }
 
     if(!crontask) {
-        crontask = cron.schedule('0 8-17 * * 1-5', sendProactiveMessage(addressSaved))
+        crontask = cron.schedule('0 8-17 * * 1-5', sendProactiveMessage(addressSaved), false);
+        crontask.start();
         console.log('Crontask has started. Config is: “At minute 0 past every hour from 8 through 17 on every day-of-week from Monday through Friday.”');
     }
 });
