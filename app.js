@@ -40,8 +40,7 @@ function sendProactiveMessage(address) {
     quotes.splice(positionQuotes, 1);
     let advice = `<a href="${advices[positionAdvice].href}">Совет: №${advices[positionAdvice].id}</a> <br/> <br/>${advices[positionAdvice].text} <br/><br/>Осталось советов: ${advices.length}`,
         quote = `Цитата: №${positionQuotes} <br><br><br><br> Осталось цитат: ${quotes.length}`;
-    // sendMessage(addressSaved, advice);
-    console.log(quote);
+    sendMessage(addressSaved, advice);
     sendMessage(addressSaved, quote);
 
     setTimeout(function () {
