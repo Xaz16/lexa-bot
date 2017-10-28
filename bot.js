@@ -57,14 +57,14 @@ function sendProactiveMessage(address, optionalChoice) {
 
     switch (optionalChoice) {
         case 'advice':
-            sendMessage(address, adviceMessage);
+            sendMessage(address, adviceMessage, bot);
             break;
         case 'quote':
-            sendMessage(address, quoteMessage);
+            sendMessage(address, quoteMessage, bot);
             break;
         default:
-            sendMessage(address, adviceMessage);
-            sendMessage(address, quoteMessage);
+            sendMessage(address, adviceMessage, bot);
+            sendMessage(address, quoteMessage, bot);
             break;
     }
 
