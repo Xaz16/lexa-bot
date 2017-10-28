@@ -46,8 +46,8 @@ let bot = new builder.UniversalBot(connector, function (session) {
 function sendProactiveMessage(address, optionalChoice) {
     address = address || addressSaved;
 
-    let positionAdvice = getRandomInRange(advices.length, 0);
-    let positionQuotes = getRandomInRange(quotes.length, 0);
+    let positionAdvice = getRandomInRange(0, advices.length);
+    let positionQuotes = getRandomInRange(0, quotes.length);
 
     advices.splice(positionAdvice, 1);
     quotes.splice(positionQuotes, 1);
