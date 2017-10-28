@@ -1,5 +1,5 @@
 const http = require('http');
-const interval = 1.74e+6;
+const interval = 300000;
 let awaker;
 
 function invoker() {
