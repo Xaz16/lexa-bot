@@ -1,10 +1,10 @@
-var querystring = require('querystring');
-var http = require('http');
-var fs = require('fs');
+const querystring = require('querystring');
+const http = require('http');
+const fs = require('fs');
 
 function PostToReciver(data) {
-    var postData = querystring.stringify(data);
-    var postOptions = {
+    let postData = querystring.stringify(data);
+    let postOptions = {
         host: '127.0.0.1',
         port: '3000',
         path: '/data',
@@ -15,7 +15,7 @@ function PostToReciver(data) {
         }
     };
 
-    var post_req = http.request(postOptions, function (res) {
+    let post_req = http.request(postOptions, function (res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
             console.log('Response: 32 ' + chunk);
