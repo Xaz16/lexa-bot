@@ -6,11 +6,11 @@ function invoker() {
 
     if (awaker === void(0)) {
         awaker = setInterval(function () {
-            http.get('https://lexa-bot.herokuapp.com/');
+            http.get('http://lexa-bot.herokuapp.com/');
             console.log('from interval %s', new Date());
         }, interval);
 
-        http.get('https://lexa-bot.herokuapp.com/');
+        http.get('http://lexa-bot.herokuapp.com/');
         console.log(new Date());
     }
 
