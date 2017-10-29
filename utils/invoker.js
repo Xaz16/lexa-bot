@@ -1,8 +1,9 @@
 const http = require('http');
-const interval = 300000;
+const interval = 1000;
 let awaker;
 
 function invoker(callback) {
+    callback = callback || function () {};
 
     if (awaker === void(0)) {
         awaker = setInterval(function () {

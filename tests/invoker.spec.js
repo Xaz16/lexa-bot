@@ -15,6 +15,16 @@ describe('Invoker function', function () {
 
         clock.tick(300001);
 
+    });
+
+    it('shouldn\'t crash if callback is not specified', function () {
+        clock = sinon.useFakeTimers();
+
+        invoker();
+
+        clock.tick(300001);
+
+        expect(1).to.equal(1);
     })
 
 });
