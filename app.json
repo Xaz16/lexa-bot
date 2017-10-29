@@ -18,7 +18,6 @@
   "environments": {
     "test": {
       "scripts": {
-        "test-setup": "npm i",
         "test": "npm run test"
       }
     }
