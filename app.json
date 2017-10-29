@@ -1,0 +1,18 @@
+{
+  "name": "lexa-bot",
+  "description": "Skype bot with advices and other jokes",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+    "mongolab"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
