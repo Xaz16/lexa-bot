@@ -6,8 +6,15 @@ let invoker = require('../utils/invoker');
 describe('Invoker function', function () {
     let clock;
 
-    it('should make get request each 5 minutes for keep app in work', function () {
+    beforeEach(function () {
         clock = sinon.useFakeTimers();
+    });
+
+    afterEach(function () {
+        clock.restore();
+    });
+
+    it('should make get request each 5 minutes for keep app in work', function () {
 
         invoker(function (res) {
             expect(res).to.not.be.undefined;
@@ -18,8 +25,6 @@ describe('Invoker function', function () {
     });
 
     it('shouldn\'t crash if callback is not specified', function () {
-        clock = sinon.useFakeTimers();
-
         invoker();
 
         clock.tick(300001);

@@ -6,11 +6,9 @@ const cron = require('node-cron');
 const parseFile = require('./utils/parseFile');
 const invoker = require('./utils/invoker.js');
 const sendMessage = require('./utils/sendMessage');
-const getRandomInRange = require('./utils/getRandomInRange');
+const getAdvice = require('./models/getAdvice');
+const getJoke = require('./models/getJoke');
 
-
-let advices = parseFile('./data.json');
-let quotes = parseFile('./quotes_uniq.json');
 let cronTask;
 let addressSaved = {};
 
@@ -30,10 +28,12 @@ server.post('/api/messages', connector.listen());
 let bot = new builder.UniversalBot(connector, function (session) {
     addressSaved = session.message.address;
 
-    if (addressSaved.user.name === 'Aleksey Chipiga' && session.message.text.match(/совет/g)) {
+    if (session.message.text.match(/совет/g)) {
         sendProactiveMessage(null, 'advice');
-    } else if (addressSaved.user.name === 'Aleksey Chipiga' && session.message.text.match(/цитату|шутейку/g)) {
+    } else if (session.message.text.match(/бороду/g)) {
         sendProactiveMessage(null, 'quote');
+    } else if (session.message.text.match(/всё/g)) {
+        sendProactiveMessage();
     }
 
     if (!cronTask) {
@@ -47,28 +47,24 @@ let bot = new builder.UniversalBot(connector, function (session) {
 function sendProactiveMessage(address, optionalChoice) {
     address = address || addressSaved;
 
-    let positionAdvice = getRandomInRange(0, advices.length);
-    let positionQuotes = getRandomInRange(0, quotes.length);
-
-    advices.splice(positionAdvice, 1);
-    quotes.splice(positionQuotes, 1);
-
-    let adviceMessage = `Совет: ${advices[positionAdvice].text}`,
-        quoteMessage = `Борода: ${quotes[positionQuotes]}`;
-
     switch (optionalChoice) {
         case 'advice':
-            sendMessage(address, adviceMessage, bot);
+            getAdvice().then(function (res) {
+                sendMessage(address, 'Совет: ' + res.text, bot);
+            });
             break;
         case 'quote':
-            sendMessage(address, quoteMessage, bot);
+            getJoke().then(function (res) {
+                sendMessage(address, 'Борода: ' + res.text, bot);
+            });
             break;
         default:
-            sendMessage(address, adviceMessage, bot);
-            sendMessage(address, quoteMessage, bot);
+            Promise.all([getJoke(), getAdvice()]).then((values) => {
+                let message = `Борода: ${values[0].text} <br/> Совет: ${values[1].text}`;
+                sendMessage(address, message, bot);
+            });
             break;
     }
-
 }
 
 
