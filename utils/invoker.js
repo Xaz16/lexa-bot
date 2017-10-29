@@ -2,7 +2,7 @@ const http = require('http');
 const interval = 300000;
 let awaker;
 
-function invoker(callback, failCallback) {
+function invoker(callback) {
 
     if (awaker === void(0)) {
         awaker = setInterval(function () {
