@@ -1,6 +1,6 @@
 {
   "name": "lexa-bot",
-  "description": "Skype bot with advices and other jokes",
+  "description": "Skype bot with advices and other jokes.",
   "scripts": {
   },
   "env": {
