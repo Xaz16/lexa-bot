@@ -1,3 +1,4 @@
+require('newrelic');
 const restify = require('restify');
 const builder = require('botbuilder');
 const fs = require('fs');
