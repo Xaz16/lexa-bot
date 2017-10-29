@@ -36,7 +36,7 @@ let bot = new builder.UniversalBot(connector, function (session) {
     }
 
     if (!cronTask) {
-        cronTask = cron.schedule('0 * * * *', sendProactiveMessage, false);
+        cronTask = cron.schedule('0 5-15 * * 1-5', sendProactiveMessage, false);
         cronTask.start();
         console.log('cron has been started');
         invoker();
