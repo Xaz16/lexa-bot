@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="41118" />
+    <option name="totalTimeSeconds" value="41491" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -51,8 +51,8 @@
       <file leaf-file-name="sendCard.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/sendCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            <state relative-caret-position="225">
+              <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -140,6 +140,7 @@
       <find>$\d+^</find>
       <find>NULL</find>
       <find>,NULL,</find>
+      <find>,</find>
     </findStrings>
     <replaceStrings>
       <replace>postData</replace>
@@ -151,6 +152,7 @@
       <replace>1000</replace>
       <replace>20000</replace>
       <replace>let</replace>
+      <replace>)</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -365,7 +367,7 @@
       <workItem from="1508130352381" duration="569000" />
       <workItem from="1509200781684" duration="17012000" />
       <workItem from="1509281131499" duration="9351000" />
-      <workItem from="1509481786050" duration="5068000" />
+      <workItem from="1509481786050" duration="5442000" />
     </task>
     <task id="LOCAL-00001" summary="..">
       <created>1507824119119</created>
@@ -626,7 +628,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509486295513</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Added cards from devlife">
+      <created>1509487042713</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1509487042713</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -635,7 +644,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58287000" />
+    <option name="totallyTimeSpent" value="58661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="0" />
@@ -1057,8 +1066,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/sendCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>
