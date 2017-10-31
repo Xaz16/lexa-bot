@@ -6,8 +6,10 @@ const cron = require('node-cron');
 const parseFile = require('./utils/parseFile');
 const invoker = require('./utils/invoker.js');
 const sendMessage = require('./utils/sendMessage');
+const sendCard = require('./utils/sendCard');
 const getAdvice = require('./models/getAdvice');
 const getJoke = require('./models/getJoke');
+const getCard = require('./models/getCard');
 
 let cronTask;
 let addressSaved = {};
@@ -59,9 +61,10 @@ function sendProactiveMessage(address, optionalChoice) {
             });
             break;
         default:
-            Promise.all([getJoke(), getAdvice()]).then((values) => {
+            Promise.all([getJoke(), getAdvice(), getCard()]).then((values) => {
                 let message = `Борода: ${values[0].text} <br/>Совет: ${values[1].text}`;
                 sendMessage(address, message, bot);
+                sendCard(address, values[2], bot)
             });
             break;
     }
