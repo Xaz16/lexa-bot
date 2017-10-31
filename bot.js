@@ -13,7 +13,7 @@ const getCard = require('./models/getCard');
 
 let cronTask;
 let addressSaved = {};
-
+let globalSession = {};
 
 let server = restify.createServer({});
 server.listen(process.env.port || process.env.PORT || 3978, function () {
@@ -28,6 +28,7 @@ let connector = new builder.ChatConnector({
 server.post('/api/messages', connector.listen());
 
 let bot = new builder.UniversalBot(connector, function (session) {
+    globalSession = session;
     addressSaved = session.message.address;
 
     if (session.message.text.match(/совет/g)) {
@@ -64,7 +65,7 @@ function sendProactiveMessage(address, optionalChoice) {
             Promise.all([getJoke(), getAdvice(), getCard()]).then((values) => {
                 let message = `Борода: ${values[0].text} <br/>Совет: ${values[1].text}`;
                 sendMessage(address, message, bot);
-                sendCard(address, values[2], bot)
+                sendCard(address, values[2], bot, globalSession)
             });
             break;
     }
