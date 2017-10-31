@@ -6,10 +6,10 @@ function sendCard(address, card, bot, session) {
         msg.addAttachment(
             new builder.AnimationCard(session)
                 .autostart(true)
-                .media(card.image)
+                .media(['https:' + card.image])
                 .text(card.text)
         );
-        msg.text('');
+        msg.text('1');
         bot.send(msg);
 }
 
