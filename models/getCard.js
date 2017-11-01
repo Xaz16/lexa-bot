@@ -11,7 +11,7 @@ function getCard() {
                 return new Error(err.message);
             }
 
-            const query = client.query('SELECT * FROM devLife ORDER BY rating DESC LIMIT 1');
+            const query = client.query('SELECT * FROM devLife ORDER BY RANDOM() LIMIT 1');
 
             query.on('row', (row) => {
                 resolve(row);
