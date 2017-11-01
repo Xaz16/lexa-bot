@@ -2,14 +2,13 @@ const builder = require('botbuilder');
 
 function sendCard(address, card, bot, session) {
     let msg = new builder.Message(session).address(address);
-        console.log(card);
         msg.addAttachment(
-            new builder.MediaCard(session)
+            new builder.AnimationCard(session)
                 .autostart(true)
                 .media([{url:'https:' + card.image}])
                 .text(card.text)
         );
-        msg.text('');
+        msg.text(card.text);
         bot.send(msg);
 }
 
