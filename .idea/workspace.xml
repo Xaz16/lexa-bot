@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="45669" />
+    <option name="totalTimeSeconds" value="45816" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -360,7 +360,7 @@
       <workItem from="1509481786050" duration="9899000" />
       <workItem from="1509523658343" duration="1666000" />
       <workItem from="1509526092473" duration="4000" />
-      <workItem from="1509555433875" duration="31000" />
+      <workItem from="1509555433875" duration="583000" />
     </task>
     <task id="LOCAL-00001" summary="..">
       <created>1507824119119</created>
@@ -677,7 +677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1509524262806</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="test cards">
+      <created>1509555476547</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1509555476547</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -686,7 +693,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64819000" />
+    <option name="totallyTimeSpent" value="65371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="0" />
