@@ -7,7 +7,7 @@ function sendCard(address, card, bot, session) {
             new builder.VideoCard(session)
                 .autostart(true)
                 .autoloop(true)
-                .media([{url:'https:' + card.videoUrl}])
+                .media([{url:card.videourl}])
                 .text(card.text)
         );
         msg.text(card.text);
