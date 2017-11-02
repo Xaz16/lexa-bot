@@ -7,9 +7,8 @@ function sendCard(address, card, bot, session) {
                 .autostart(true)
                 .autoloop(true)
                 .media([{url:card.videourl}])
-                .text(card.text)
+                .subtitle(card.text)
         );
-        msg.text(card.text);
         bot.send(msg);
 }
 
