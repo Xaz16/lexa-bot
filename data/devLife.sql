@@ -11035,3 +11035,5 @@ ball.PutOnTheGround();
 (10209,0,'Многозадачная операционка','https://static1.devli.ru/public/images/v/201404/ed2f0ae9-afc8-46ae-9bb0-b15606ab5c5d.mp4'),
 (4226,0,'маленькая программа жрет слишком много оперативки','https://static1.devli.ru/public/images/v/201308/93aa1e27-7878-4d8b-b6aa-870c82600ffe.mp4'),
 (12637,0,'Джун залил свой первый коммит...','https://static1.devli.ru/public/images/v/201502/88174385-9cbb-4894-b884-c0339c4b05c1.mp4');
+
+ALTER TABLE devLife ADD repeats int NOT NULL DEFAULT(0);

@@ -37,6 +37,8 @@ let bot = new builder.UniversalBot(connector, function (session) {
         sendProactiveMessage(null, 'quote');
     } else if (session.message.text.match(/всё/g)) {
         sendProactiveMessage();
+    } else if (session.message.text.match(/карта/g)) {
+        sendProactiveMessage(null, 'card');
     }
 
     if (!cronTask) {
@@ -59,6 +61,11 @@ function sendProactiveMessage(address, optionalChoice) {
         case 'quote':
             getJoke().then(function (res) {
                 sendMessage(address, 'Борода: ' + res.text, bot);
+            });
+            break;
+        case 'card':
+            getCard(true).then(function (res) {
+                sendCard(address, res, bot, globalSession);
             });
             break;
         default:
