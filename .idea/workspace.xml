@@ -4,6 +4,7 @@
     <list default="true" id="0150dc40-1df6-4359-a3d2-54e180d37dc4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/sendCard.js" afterPath="$PROJECT_DIR$/utils/sendCard.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/sendMessage.js" afterPath="$PROJECT_DIR$/utils/sendMessage.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DarkyenusTimeTracker">
-    <option name="totalTimeSeconds" value="46927" />
+    <option name="totalTimeSeconds" value="47309" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -38,11 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendCard.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sendCard.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/sendCard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+            <state relative-caret-position="60">
+              <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -98,11 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendMessage.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="sendMessage.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/sendMessage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="29" />
+            <state relative-caret-position="45">
+              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -176,7 +177,6 @@
         <option value="$PROJECT_DIR$/utils/post.js" />
         <option value="$PROJECT_DIR$/utils/getAdresses.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/utils/sendMessage.js" />
         <option value="$PROJECT_DIR$/tests/data/parseFileExample.json" />
         <option value="$PROJECT_DIR$/utils/parseFile.js" />
         <option value="$PROJECT_DIR$/utils/parseFile/parseFile.spec.js" />
@@ -199,6 +199,7 @@
         <option value="$PROJECT_DIR$/models/getCard.js" />
         <option value="$PROJECT_DIR$/data/devLife.sql" />
         <option value="$PROJECT_DIR$/utils/sendCard.js" />
+        <option value="$PROJECT_DIR$/utils/sendMessage.js" />
       </list>
     </option>
   </component>
@@ -381,14 +382,7 @@
       <workItem from="1509481786050" duration="9899000" />
       <workItem from="1509523658343" duration="1666000" />
       <workItem from="1509526092473" duration="4000" />
-      <workItem from="1509555433875" duration="3608000" />
-    </task>
-    <task id="LOCAL-00001" summary="..">
-      <created>1507824119119</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1507824119119</updated>
+      <workItem from="1509555433875" duration="4418000" />
     </task>
     <task id="LOCAL-00002" summary="..">
       <created>1507824734981</created>
@@ -719,7 +713,21 @@
       <option name="project" value="LOCAL" />
       <updated>1509564155344</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="test cards">
+      <created>1509624878857</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1509624878858</updated>
+    </task>
+    <task id="LOCAL-00050" summary="test cards">
+      <created>1509625065167</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1509625065169</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -728,7 +736,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68396000" />
+    <option name="totallyTimeSpent" value="69206000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1279" y="22" width="1920" height="1054" extended-state="0" />
@@ -1057,14 +1065,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/getJoke.spec.js" />
-    <entry file="file://$PROJECT_DIR$/utils/sendMessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/getAdvice.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1138,8 +1138,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/sendCard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="56" lean-forward="true" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        <state relative-caret-position="60">
+          <caret line="4" column="26" lean-forward="false" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/sendMessage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding />
         </state>
       </provider>
