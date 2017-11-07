@@ -23,7 +23,8 @@ function getCard(noUpdate = false) {
                     done()
                 });
             } else {
-                const query = client.query('SELECT * FROM devLife ORDER BY repeats ASC, rating DESC LIMIT 1');
+                // const query = client.query('SELECT * FROM devLife ORDER BY repeats ASC, rating DESC LIMIT 1');
+                const query = client.query('SELECT * FROM devLife ORDER BY repeats ASC, RANDOM() LIMIT 1');
 
                 query.on('row', (row) => {
                     data = row;
