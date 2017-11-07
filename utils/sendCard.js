@@ -9,7 +9,6 @@ function sendCard(address, card, bot, session) {
                 .media([{url:card.videourl}])
                 .subtitle(card.text)
         );
-        msg.text(`<a href="https://developerslife.ru/${card.id}">Ссылка</a>`);
         bot.send(msg);
 }
 

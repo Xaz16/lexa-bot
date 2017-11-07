@@ -70,7 +70,7 @@ function sendProactiveMessage(address, optionalChoice) {
             break;
         default:
             Promise.all([getJoke(), getAdvice(), getCard()]).then((values) => {
-                let message = `Борода: ${values[0].text} <br/>Совет: ${values[1].text}`;
+                let message = `Борода: ${values[0].text} <br/>Совет: ${values[1].text}<br/><a href="https://developerslife.ru/${values[2].id}">Ссылка devLife</a>`;
                 sendMessage(address, message, bot);
                 sendCard(address, values[2], bot, globalSession)
             });
