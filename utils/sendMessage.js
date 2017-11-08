@@ -1,7 +1,6 @@
 const builder = require('botbuilder');
 
 function sendMessage(address, text, bot) {
-    console.log(address);
     let msg = new builder.Message().address(address);
     msg.text(text);
     msg.textLocale('ru-RU');

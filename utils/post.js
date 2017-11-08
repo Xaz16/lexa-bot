@@ -18,7 +18,6 @@ function PostToReciver(data) {
     let post_req = http.request(postOptions, function (res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
-            console.log('Response: 32 ' + chunk);
         });
     });
 

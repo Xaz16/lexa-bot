@@ -8,7 +8,6 @@ function getCard(noUpdate = false) {
             if (err) {
                 done();
                 reject();
-                console.log(err.message);
                 return new Error(err.message);
             }
 

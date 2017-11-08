@@ -7,7 +7,6 @@ function getJoke() {
             if (err) {
                 done();
                 reject(new Error(err.message));
-                console.log(err.message);
             }
 
             const query = client.query('SELECT text FROM jokes ORDER BY RANDOM() LIMIT 1');

@@ -7,7 +7,6 @@ function invoker(callback) {
 
     if (awaker === void(0)) {
         awaker = setInterval(function () {
-            console.log('from interval %s', new Date());
             http.get('http://lexa-bot.herokuapp.com/', function (res) {
                 callback(res)
             })
