@@ -2,11 +2,12 @@ const builder = require('botbuilder');
 
 function sendCard(address, card, bot, session) {
     let msg = new builder.Message(session).address(address);
+        console.log(card);
         msg.addAttachment(
-            new builder.VideoCard(session)
+            new builder.AnimationCard(session)
                 .autostart(true)
                 .autoloop(true)
-                .media([{url:card.videourl}])
+                .media([{url:card.gifUrl}])
                 .subtitle(card.text)
         );
         bot.send(msg);
