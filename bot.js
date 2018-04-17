@@ -22,7 +22,7 @@ let connector = new builder.ChatConnector({
   appPassword: process.env.appPassword
 });
 
-server.post('/api/messages', connector.listen());
+server.post('lexabot/api/messages', connector.listen());
 
 let bot = new builder.UniversalBot(connector, function (session) {
   globalSession = session;
